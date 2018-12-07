@@ -1,0 +1,26 @@
+{
+    "name": "delejet/y2apidoc",
+    "description": "Yet Another Api Docs Generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Krzysztof Chelchowski",
+            "email": "ssdelejt@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Delejt\\Y2apidoc\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/support": "5.*",
+        "php" : ">=7.1.0",
+        "phpdocumentor/reflection-docblock": "2.0.*@dev",
+        "scrivo/highlight.php": "^9.13",
+    }
+}
