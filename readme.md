@@ -2,7 +2,7 @@
 
 Automatically generate your API documentation from existing Laravel routing and Class/methods docblocks
 
-Notice that this package in BETA version. There few things still todo :) 
+Notice that this package in BETA version. There are few things still todo :) 
 
 ```
 php artisan y2apidoc:generate
