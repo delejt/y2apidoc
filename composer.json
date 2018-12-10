@@ -8,7 +8,7 @@
             "email": "ssdelejt@gmail.com"
         }
     ],
-    "minimum-stability": "rc",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Delejt\\Y2apidoc\\": "src"
