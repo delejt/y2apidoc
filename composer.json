@@ -13,7 +13,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Delejt\\Y2apidoc\\ServiceProvider"
+                "Delejt\\Y2apidoc\\Y2apidocServiceProvider"
             ]
         }
     },
