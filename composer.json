@@ -1,7 +1,6 @@
 {
     "name": "delejt/y2apidoc",
     "description": "Yet Another Api Docs Generator",
-    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -9,14 +8,23 @@
             "email": "ssdelejt@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "rc",
     "autoload": {
         "psr-4": {
-            "Delejt\\Y2apidoc\\": "src/"
+            "Delejt\\Y2apidoc\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Delejt\\Y2apidoc\\ServiceProvider"
+            ]
         }
     },
     "require": {
-        "illuminate/support": "5.*",
+        "illuminate/support": "5.5.* || 5.6.* || 5.7.*",
+        "illuminate/routing": "5.5.* || 5.6.* || 5.7.*",
+        "illuminate/console": "5.5.* || 5.6.* || 5.7.*",
         "php" : ">=7.1.0",
         "phpdocumentor/reflection-docblock": "4.*",
         "scrivo/highlight.php": "^9.13"

@@ -22,9 +22,15 @@ php artisan y2apidoc:generate
 ```
 $ composer require delejt/y2apidoc
 ```
+## Publishing config and template files
+```
+php artisan vendor:publish --provider="Delejt\Y2apidoc\ServiceProvider" --tag="config"
+```
+```
+php artisan vendor:publish --provider="Delejt\Y2apidoc\ServiceProvider" --tag="template"
+```
 
 ## Configuration
-
 Before you can generate your documentation, 
 you'll need to configure a few things in your config/y2apidoc.php:
 

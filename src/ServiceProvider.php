@@ -1,22 +1,14 @@
-<?php
+<?php namespace Delejt\Y2apidoc;
 
-namespace Delejt\Y2apidoc;
-
+use Illuminate\Support\ServiceProvider as Sp;
 /**
- * Class Y2apidocServiceProvider
+ * Class ServiceProvider
  *
  * @package Delejt\Y2apidoc
  */
-class ServiceProvider extends Illuminate\Support\ServiceProvider
+class ServiceProvider extends Sp
 {
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-    }
+    protected $defer = false;
 
     /**
      * Register services.
@@ -25,16 +17,29 @@ class ServiceProvider extends Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/config/y2apidoc.php', 'y2apidoc'
-        );
+        $this->mergeConfigFrom(__DIR__.'/config/config.php', 'y2apidoc');
 
         // Register Console Commands
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                Commands\GenerateApiDocs::class,
-            ]);
+        $this->commands(
+            Commands\GenerateApiDocs::class
+        );
+
+    }
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        if (function_exists('config_path')) {
+            $this->publishes([
+                __DIR__.'/config/config.php' => config_path('y2apidoc.php'),
+            ], 'config');
         }
 
     }
+
 }
+
+
