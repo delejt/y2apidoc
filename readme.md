@@ -9,8 +9,8 @@ php artisan y2apidoc:generate
 ```
 
 ## Some screenshots
-[y2apidoc](doc/1st.png) 
-[y2apidoc - method](doc/method.png) 
+- [y2apidoc](doc/1st.png) 
+- [y2apidoc - method](doc/method.png) 
 
 ## Prerequisites
 
