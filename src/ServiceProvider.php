@@ -2,14 +2,12 @@
 
 namespace Delejt\Y2apidoc;
 
-use Illuminate\Support\ServiceProvider;
-
 /**
  * Class Y2apidocServiceProvider
  *
  * @package Delejt\Y2apidoc
  */
-class Y2apidocServiceProvider extends ServiceProvider
+class ServiceProvider extends Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap services.

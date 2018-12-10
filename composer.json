@@ -10,11 +10,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Delejt\\Y2apidoc\\Y2apidocServiceProvider"
-            ]
+    "autoload": {
+        "psr-4": {
+            "Delejt\\Y2apidoc\\": "src/"
         }
     },
     "require": {
