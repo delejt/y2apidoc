@@ -20,7 +20,7 @@
     "require": {
         "illuminate/support": "5.*",
         "php" : ">=7.1.0",
-        "phpdocumentor/reflection-docblock": "2.0.*@dev",
+        "phpdocumentor/reflection-docblock": "4.3.0",
         "scrivo/highlight.php": "^9.13"
     }
 }
