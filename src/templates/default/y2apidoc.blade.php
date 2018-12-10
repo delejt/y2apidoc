@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Y2apidoc - Yet Another ApiDoc Generator for Laravel</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,9 @@
                 <h1 class="page-header">Y2apidoc</h1>
 
                 <p class="lead">
-                    Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+                    Welcome to the our Documentation! You can use our API to access API endpoints, which can get information on various products, stocks, and prices in our database.
 
-                    We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-                    This example API documentation page was created with Whiteboard. Feel free to edit it and use it as a base for your own API’s documentation.
+                    We have language bindings in Php and Shell! You can view code examples and response examples.
                 </p>
 
             </div>
@@ -178,7 +176,7 @@
 
         <div class="col-md-3" role="complementary">
             <nav id="column_right">
-                <ul class="nav nav-list">
+                <ul class="nav nav-list tree">
                     <li>
                         <a href="#home">Home</a>
                     </li>

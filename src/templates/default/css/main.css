@@ -4,6 +4,9 @@
     background: none;
 
 }
+.nav-list.tree {
+ position: fixed;
+}
 
 .nav-list > li > a:hover,
 .nav-list > li > a:focus {

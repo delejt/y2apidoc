@@ -1,12 +1,25 @@
 <?php namespace Delejt\Y2apidoc\Tags;
 
+/**
+ * Class WarningTag
+ *
+ * @package Delejt\Y2apidoc\Tags
+ */
 class WarningTag
 {
+    /**
+     * @param $body
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function parse($body)
     {
         return $this->render($body);
     }
 
+    /**
+     * @param $body
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     protected function render($body)
     {
         $template_path = config('y2apidoc.documentation.tags_template_path');

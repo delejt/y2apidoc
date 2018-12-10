@@ -3,8 +3,12 @@
 namespace Delejt\Y2apidoc;
 
 use Illuminate\Support\ServiceProvider;
-//use phpDocumentor\Reflection\DocBlock\Tag;
 
+/**
+ * Class Y2apidocServiceProvider
+ *
+ * @package Delejt\Y2apidoc
+ */
 class Y2apidocServiceProvider extends ServiceProvider
 {
     /**
