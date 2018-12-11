@@ -2,8 +2,6 @@
 
 Automatically generate your API documentation from existing Laravel routing and Class/methods docblocks
 
-Notice that this package in BETA version. There are few things still todo :) 
-
 ```
 php artisan y2apidoc:generate
 ```
@@ -50,17 +48,17 @@ you'll need to configure a few things in your config/y2apidoc.php:
 
 - you can change template for documentation (default is bootstrap 3.3 simple template) 
 ```
-'source' => 'delejt/y2apidoc/src/templates/default',
+'source' => 'resources/views/vendor/y2apidoc/default',
 ```
 
 - path for custom tags special templates, name of the file must be [tag_name]tag.blade.php, ex.: tabletag.blade.php
 ```
-'tags_template_path' => 'delejt/y2apidoc/src/templates/default/_partials/tags',
+'tags_template_path' => 'resources/views/vendor/y2apidoc/default/_partials/tags',
 ```
 
 - specify custom languages templates (PHP/Shell included):
 ```
-'languages' => 'delejt/y2apidoc/src/templates/default/_partials/langs',
+'languages' => 'resources/views/vendor/y2apidoc/default/_partials/langs',
 ```
 
 - specify available tags for parser (or add your own), You can place here custom renderer class
@@ -109,7 +107,7 @@ you'll need to configure a few things in your config/y2apidoc.php:
      'delete' => 'danger',
  ],
 ```
-- configure headers automatically added to each reasponse:
+- configure headers automatically added to each response:
 ```
  'response' => [
      'headers' => [
@@ -121,7 +119,7 @@ you'll need to configure a few things in your config/y2apidoc.php:
 
 ## Documentation
 Y2apidoc uses HTTP controller doc blocks to create a table of contents and show descriptions for your API methods.
-Package automatically create groups from controller names and all routes handled by that controller will placed 
+Package automatically create groups from controller names. All routes handled by that controller will placed 
 under this group in the [sidebar menu](doc/aside.png) 
 
 ## Tags
@@ -144,12 +142,12 @@ You can define custom tags by adding it's name to config file, example:
 You can specify custom renderer for this tag by putting class path:
 ```
  "@mikimouse" => [
-     'class' => '\\Delejt\\Y2apidoc\\Tags\\MikiMouseTag',
+     'class' => '\\Some\\Custom\\Namespace\\MikiMouseTag',
  ],
 ```
 Next create class with 'parse' method in given path:
 ```
-<?php namespace Delejt\Y2apidoc\Tags;
+<?php namespace Some\Custom\Namespace;
 
 class MikiMouseTag
 {
@@ -163,7 +161,7 @@ class MikiMouseTag
 Your custom tag is now available in your docblock. 
 If you want create Tag with custom template,
 ```
-<?php namespace Delejt\Y2apidoc\Tags;
+<?php namespace Some\Custom\Namespace;
 
 class MikiMouseTag
 {
@@ -174,13 +172,10 @@ class MikiMouseTag
 
     protected function render($body)
     {
-        $template_path = config('y2apidoc.documentation.tags_template_path');
-        $filename = 'mikimouse';
-
-        view()->addLocation($template_path);
+        $template_name = 'mikimouse';
 
         try {
-            return view($filename)->with('text', $body);
+            return view($template_name)->with('text', $body);
         }
         catch (\Exception $e) {
             return $body;
@@ -205,12 +200,12 @@ To define custom languages tabs, just create blade template in path declared in 
  /*
   * Path for templates with languages
   */
- 'languages' => 'delejt/y2apidoc/src/templates/default/_partials/langs',
+  'languages' => 'resources/views/vendor/y2apidoc/default/_partials/langs',
 
 ```
 Name of this file should be name of current language:
 ```
-shell.blade.php
+javascript.blade.php
 ```
 List of available variables in this template:
 - url - parsed url with parameter ex.:  https://domain.xxx/api/product_stocks/1/30

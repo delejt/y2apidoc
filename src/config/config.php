@@ -19,19 +19,19 @@
          /*
           * Documentation template source
           */
-         'source' => 'vendor/y2apidoc/default',
+         'source' => 'resources/views/vendor/y2apidoc/default',
 
          /*
           * Custom Documentation Tags Templates Path
           * If you want customize rendering some tags just put blade template in this path.
           * Name of the file must be [tag_name]tag.blade.php, ex.: tabletag.blade.php
           */
-         'tags_template_path' => 'vendor/y2apidoc/default/_partials/tags',
+         'tags_template_path' => 'resources/views/vendor/y2apidoc/default/_partials/tags',
 
          /*
           * Path for templates with languages
           */
-         'languages' => 'vendor/y2apidoc/default/_partials/langs',
+         'languages' => 'resources/views/vendor/y2apidoc/default/_partials/langs',
 
          /*
           * Available Tags and custom tags parsers
