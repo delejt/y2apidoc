@@ -126,11 +126,42 @@ under this group in the [sidebar menu](doc/aside.png)
 This package uses standard php [DocBlock comments](http://docs.phpdoc.org/guides/docblocks.html).
 Packages has custom Tags defined too.
 
-- @notice sample notice message presented as bootstrap alert
+- @notice sample notice message presented as bootstrap alert, example:
+   ```
+   @notice Simple Notice.
+   ```
+    
 - @warning sample warning message presented as bootstrap alert
+   ```
+   @warning Simple Warning.
+   ```
 - @table tag to create table in your documentation - example for special params list
+   ```
+    @table Type|Name|Requirements|Description
+    int|page|required|Page Number, example: 1
+    int|item_per_page|required|Items per page, example: 32
+    int|ean|optional|EAN13 if you specify this parameter
+   ```
 - @response tag to show example response from current method
+   ```
+   @response {
+       "success": true,
+       "data": {
+         "id": 55597,
+         "product_id": 59863,
+         "warehouse_id": 1,
+         "quantity": 1333,
+         "delivery_time": 48,
+         "created_at": "2018-09-25 10:43:25",
+         "updated_at": "2018-12-07 12:29:09"
+       },
+       "message": "Record updated successfully."
+     }
+   ```
 - @responsefile tag to show response from current method - see Response File section
+    ```
+    @responsefile product.index.json
+    ```
 
 # Custom Tags...
 You can define custom tags by adding it's name to config file, example:
