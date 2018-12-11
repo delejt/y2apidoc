@@ -74,7 +74,7 @@ class GenerateApiDocs  extends Command
         $template_path = config('y2apidoc.documentation.source');
 
         $this->prepareEnvironment($output);
-        $view = $this->renderView($routes, $template_path);
+        $view = $this->renderView($routes);
         $this->saveDocumentation($view, $template_path, $output);
     }
 
@@ -101,7 +101,7 @@ class GenerateApiDocs  extends Command
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \ReflectionException
      */
-    protected function renderView($routes, $template_path)
+    protected function renderView($routes)
     {
         $documentation = $this->prepareDocumentation($routes);
 

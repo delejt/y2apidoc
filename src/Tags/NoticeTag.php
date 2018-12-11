@@ -22,7 +22,6 @@ class NoticeTag
      */
     protected function render($body)
     {
-        $template_path = config('y2apidoc.documentation.tags_template_path');
         $filename = strtolower(join('', array_slice(explode('\\', __CLASS__), -1)));
 
         try {
