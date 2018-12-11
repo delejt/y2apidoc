@@ -105,8 +105,6 @@ class GenerateApiDocs  extends Command
     {
         $documentation = $this->prepareDocumentation($routes);
 
-        view()->addLocation($template_path);
-
         return view('y2apidoc')
             ->with('documentation', $documentation);
     }
@@ -190,7 +188,7 @@ class GenerateApiDocs  extends Command
                     $parser = new $config_tags[$name]['class'];
                     $result[] = [
                         'name' => $name,
-                        'body' => (string) $parser->parse($body)
+                        'body' => $parser->parse($body)
                     ];
                 }
                 else {
@@ -231,9 +229,6 @@ class GenerateApiDocs  extends Command
             $param = explode('|', (string) $item);
             $params[$param[0]] = $param[1] ?? '';
         }
-
-        // add tempates location
-        view()->addLocation($languages_path);
 
         $result = [];
         foreach (glob($languages_path . DIRECTORY_SEPARATOR . "*.blade.php") as $filename) {

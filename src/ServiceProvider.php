@@ -32,12 +32,17 @@ class ServiceProvider extends Sp
      */
     public function boot()
     {
-        if (function_exists('config_path')) {
-            $this->publishes([
-                __DIR__.'/config/config.php' => config_path('y2apidoc.php'),
-            ], 'config');
-        }
+        $this->publishes([
+            __DIR__.'/config/config.php' => config_path('y2apidoc.php'),
+        ], 'config');
 
+        $this->publishes([
+            __DIR__.'/templates' => resource_path('views/vendor/y2apidoc'),
+        ], 'template');
+
+        view()->addLocation(config('y2apidoc.documentation.source'));
+        view()->addLocation(config('y2apidoc.documentation.languages'));
+        view()->addLocation(config('y2apidoc.documentation.tags_template_path'));
     }
 
 }

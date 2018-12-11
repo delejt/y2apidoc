@@ -23,11 +23,7 @@ class ResponseFileTag
      */
     protected function render($filename)
     {
-        $template_path = config('y2apidoc.documentation.tags_template_path');
         $template_name = strtolower(join('', array_slice(explode('\\', __CLASS__), -1)));
-
-        view()->addLocation($template_path);
-
         $response_file = storage_path('api') . DIRECTORY_SEPARATOR . $filename;
 
         if (!file_exists($response_file)) {
